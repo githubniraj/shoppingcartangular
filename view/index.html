@@ -1,24 +1,80 @@
 <!DOCTYPE html>
 <html ng-app='app' >
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="/shoppingcartangular/node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/shoppingcartangular/css/dashboard.css" rel="stylesheet">
+
+    <link href="/shoppingcartangular/css/viewport-bug-workaround.css" rel="stylesheet">
+
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 30%;
+            margin: auto;
+        }
+
+        .myRow {
+            padding-top: 2%;
+            padding-left: 2%;
+            height: 100px;
+            width:200px;
+            border-bottom: solid;
+            background-color:#999999;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+    </style>
 
 </head>
 
 <body>
+<div class="container" style="margin-left:1%" ng-controller="appCtrl">
+        <title-dir></title-dir>
+        <div class="row">
+            <div class="col-md-2" style="height:100%;">
+            <!--LEFT DIV-->
+            <left-body-dir></left-body-dir>
+            </div>
 
-    <div>
+            <!--RIGHT DIV-->
+            <div class="col-md-10" style="padding: 4%;height:100%;">
+                <div class="container">
+                    <div ng-if="selectId == 0">
+                        <landing-template></landing-template>
+                    </div>
+                    <div ng-if="selectId != 0">
+                        <right-body-dir></right-body-dir>
+                    </div>
+                </div>
+            </div>
+            <!--END of RIGHT div -->
+
+        </div>
 
 
-
-
-
-    </div>
+</div>
 
     <script src="/shoppingcartangular/node_modules/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="/shoppingcartangular/node_modules/bootstrap/dist/css/bootstrap.css">
     <script type="text/javascript" src="/shoppingcartangular/node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script  src="/shoppingcartangular/node_modules/angular/angular.js"></script>
     <script src="/shoppingcartangular/js/app.js"></script>
+    <script src="/shoppingcartangular/js/controller/appController.js"></script>
+    <script src="/shoppingcartangular/js/directive/appDirective.js"></script>
+    <script src="/shoppingcartangular/js/service/appService.js"></script>
 
 
 </body>
